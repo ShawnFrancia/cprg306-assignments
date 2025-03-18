@@ -13,7 +13,7 @@ export default function Page() {
     };
 
     return (
-        <main className="bg-slate-950 min-h-screen p-2 flex flex-col items-center">
+        <main className="bg-slate-950 min-h-screen p-2 flex flex-col">
             <h1 className="text-3xl font-bold text-white mb-4">Shopping List</h1>
             <div className="w-full max-w-md">
                 <NewItem onAddItem={handleAddItem} items={items} />

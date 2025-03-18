@@ -3,7 +3,7 @@
 import Item from './item'; 
 import { useState } from 'react';
 
-export default function ItemList({ items }) {
+export default function ItemList({ items, onItemSelect }) {
     const [sortBy, setSortBy] = useState('name');
 
     const sortedItems = [...items].sort((a, b) => {
@@ -24,7 +24,7 @@ export default function ItemList({ items }) {
             </div>
             <ul className="space-y-2">                                              
                 {sortedItems.map((item, index) => (
-                    <li key={index} className="p-4 border border-gray-300 rounded shadow">
+                    <li key={index} className="p-4 border border-gray-300 rounded shadow" onClick={() => onItemSelect(item)}>
                         <Item name={item.name} quantity={item.quantity} category={item.category} />
                     </li>
                 ))}
